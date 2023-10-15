@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template Example</title>
+</head>
+<body>
+
+    <style>
+        .assemble-button {
+            border: 1px solid black;
+            background: green;
+            padding: 5px;
+            font-size: 20px;
+        }
+    </style>
+
+    <p>
+        <span>Assembled drones: </span> <span th:text="${assembledDrones}"></span>
+    </p>
+
+    <p>
+        <span>Can assemble: </span> <b th:text="${canAssembleDrone}"></b>
+    </p>
+
+    <form th:if="${canAssembleDrone}" action="assemble" method="POST">
+        <button type="submit" class="assemble-button">Assemble And Send</button>
+    </form>
+</body>
+</html>
